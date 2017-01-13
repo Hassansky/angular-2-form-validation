@@ -48,15 +48,15 @@ export class LoginComponent {
 
   submitForm(value: any){
     let form = {
-      'client_id' : 'YOUR-AUTH0-CLIENT-ID',
+      'client_id' : 'hT4226TxNWkIwnmnRBpASt9RFMY12yLa',
       'username' : value.email,
       'password' : value.password,
-      'connection' : 'YOUR-DATABASE-CONNECTION-NAME',
+      'connection' : 'test',
       'grant_type' : 'password',
       'scope' : 'openid name email'
     }
 
-    this.http.post('https://YOUR-AUTH0-DOMAIN.auth0.com/oauth/ro', form).subscribe(
+    this.http.post('https://hassan.eu.auth0.com/oauth/ro', form).subscribe(
       (res:any)=>{
         let data = res.json();
         if(data.id_token){
@@ -71,7 +71,7 @@ export class LoginComponent {
     let form = {
       'id_token' : data.id_token
     }
-    this.http.post('https://YOUR-AUTH0-DOMAIN.auth0.com/tokeninfo', form).subscribe(
+    this.http.post('https://hassan.eu.auth0.com/tokeninfo', form).subscribe(
       (res:any)=>{
         let data = res.json();
         this.profile = data;

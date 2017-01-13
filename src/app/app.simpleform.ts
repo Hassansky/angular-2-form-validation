@@ -4,29 +4,29 @@ import { Component } from '@angular/core';
   selector: 'simple-form',
   template : `
   <div class="jumbotron">
-    <h2>Template Driven Form</h2>
+    <h2>Formularz Kontaktowy</h2>
     <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
       <div class="form-group">
-        <label>First Name:</label>
+        <label>Imię</label>
         <input type="text" class="form-control" placeholder="John" name="firstName" ngModel required>
       </div>
       <div class="form-group">
-        <label>Last Name</label>
+        <label>Nazwisko</label>
         <input type="text" class="form-control" placeholder="Doe" name="lastName" ngModel required>
       </div>
       <div class="form-group">
-        <label>Gender</label>
+        <label>Płeć</label>
       </div>
       <div class="radio">
         <label>
           <input type="radio" name="gender" value="Male" ngModel>
-          Male
+          Mężczyzna
         </label>
       </div>
       <div class="radio">
         <label>
           <input type="radio" name="gender" value="Female" ngModel>
-          Female
+          Kobieta
         </label>
       </div>
       <div class="form-group">
