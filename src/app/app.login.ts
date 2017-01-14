@@ -6,26 +6,26 @@ import {Http, Response, Request, RequestMethod} from '@angular/http';
   selector: 'login-form',
   template : `
   <div class="jumbotron" *ngIf="!authenticated">
-    <h2>Login Form</h2>
+    <h2>Logowanie</h2>
     <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
       <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
-        <label>Email:</label>
-        <input class="form-control" type="text" placeholder="John@doe.com" [formControl]="loginForm.controls['email']">
-        <div *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="alert alert-danger">You must add an email.</div>
+        <label>E-Mail::</label>
+        <input class="form-control" type="text" placeholder="jan@kowalski.pl" [formControl]="loginForm.controls['email']">
+        <div *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="alert alert-danger">Musisz podać adres e-mail.</div>
       </div>
       <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
-        <label>Password:</label>
+        <label>Hasło:</label>
         <input class="form-control" type="password" placeholder="Password" [formControl]="loginForm.controls['password']">
-        <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="alert alert-danger">You must add a password.</div>
+        <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="alert alert-danger">Musisz podać hasło</div>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Wyślij</button>
       </div>
     </form>
   </div>
   <div class="jumbotron text-center" *ngIf="authenticated">
     <img src="{{profile.picture}}" />
-    <h2>Welcome, {{profile.email}}</h2>
+    <h2>Witaj, {{profile.email}}</h2>
     <a (click)="logout()">Logout</a>
   </div>
   `
@@ -51,7 +51,7 @@ export class LoginComponent {
       'client_id' : 'hT4226TxNWkIwnmnRBpASt9RFMY12yLa',
       'username' : value.email,
       'password' : value.password,
-      'connection' : 'test',
+      'connection' : 'Username-Password-Authentication',
       'grant_type' : 'password',
       'scope' : 'openid name email'
     }

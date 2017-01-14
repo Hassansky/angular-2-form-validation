@@ -8,12 +8,13 @@ import { Component } from '@angular/core';
     <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
       <div class="form-group">
         <label>Imię</label>
-        <input type="text" class="form-control" placeholder="John" name="firstName" ngModel required>
+        <input type="text" class="form-control" placeholder="Jan" name="firstName" ngModel required>
       </div>
       <div class="form-group">
         <label>Nazwisko</label>
-        <input type="text" class="form-control" placeholder="Doe" name="lastName" ngModel required>
+        <input type="text" class="form-control" placeholder="Kowalski" name="lastName" ngModel required>
       </div>
+      
       <div class="form-group">
         <label>Płeć</label>
       </div>
@@ -29,18 +30,12 @@ import { Component } from '@angular/core';
           Kobieta
         </label>
       </div>
+      
       <div class="form-group">
-        <label>Activities</label>
+        <label>Treść</label>
+      <textarea style="width:100%; height:200px;" ngModel></textarea>
       </div>
-      <label class="checkbox-inline">
-        <input type="checkbox" value="hiking" name="hiking" ngModel> Hiking
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" value="swimming" name="swimming" ngModel> Swimming
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" value="running" name="running" ngModel> Running
-      </label>
+      
       <div class="form-group">
         <button type="submit" class="btn btn-default">Submit</button>
       </div>
